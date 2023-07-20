@@ -8,32 +8,41 @@
             width: 100%;
         }
 
-        td, th {
+        td {
             text-align: left;
             padding: 8px;
             border-right: 1px solid #ddd;
+            width: 100px;
         }
 
+        th {
+            text-align: left;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            padding-left: 4px;
+            border-right: 1px solid #ddd;
+        }.time {
+            width: 30px;
+        }
+
+
         td:nth-child(even), th:nth-child(even) {
-            background-color: #d7e0e7;
+            background-color: #eaeff3;
         }
 
         tr {
             border-top: 1px solid #ddd;
             border-right: 1px solid #ddd;
+        }.half-hour-row {
+            padding: 8px;
+            border-bottom: 1px solid #ddd;
+            border-top: 1px dotted #ddd;
         }
 
         td:hover {
             cursor: pointer;
             background-color: #D6EEEE;
         }
-
-        .half-hour-row {
-            padding: 8px;
-            border-bottom: 1px solid #ddd;
-            border-top: 1px dotted #ddd;
-        }
-
     </style>
   </head>
   <body>
@@ -52,7 +61,7 @@
             <th>Saturday</th>
         </tr>
         <tr>
-            <th>8:00</th>
+            <th class="time">8:00</th>
             <td></td>
             <td></td>
             <td></td>
@@ -72,7 +81,7 @@
             <td></td>
         </tr>
         <tr>
-            <th>9:00</th>
+            <th class="time">9:00</th>
             <td></td>
             <td></td>
             <td></td>
@@ -92,7 +101,7 @@
             <td></td>
         </tr>
         <tr>
-            <th>10:00</th>
+            <th class="time">10:00</th>
             <td></td>
             <td></td>
             <td></td>
@@ -112,7 +121,7 @@
             <td></td>
         </tr>
         <tr>
-            <th>11:00</th>
+            <th class="time">11:00</th>
             <td></td>
             <td></td>
             <td></td>
@@ -132,7 +141,7 @@
             <td></td>
         </tr>
         <tr>
-            <th>12:00</th>
+            <th class="time">12:00</th>
             <td></td>
             <td></td>
             <td></td>
@@ -152,7 +161,7 @@
             <td></td>
         </tr>
         <tr>
-            <th>13:00</th>
+            <th class="time">13:00</th>
             <td></td>
             <td></td>
             <td></td>
@@ -172,7 +181,7 @@
             <td></td>
         </tr>
         <tr>
-            <th>14:00</th>
+            <th class="time">14:00</th>
             <td></td>
             <td></td>
             <td></td>
@@ -192,7 +201,7 @@
             <td></td>
         </tr>
         <tr>
-            <th>15:00</th>
+            <th class="time">15:00</th>
             <td></td>
             <td></td>
             <td></td>
@@ -212,7 +221,7 @@
             <td></td>
         </tr>
         <tr>
-            <th>16:00</th>
+            <th class="time">16:00</th>
             <td></td>
             <td></td>
             <td></td>
@@ -232,7 +241,7 @@
             <td></td>
         </tr>
         <tr>
-            <th>17:00</th>
+            <th class="time">17:00</th>
             <td></td>
             <td></td>
             <td></td>
@@ -252,7 +261,7 @@
             <td></td>
         </tr>
         <tr>
-            <th>18:00</th>
+            <th class="time">18:00</th>
             <td></td>
             <td></td>
             <td></td>
@@ -272,7 +281,7 @@
             <td></td>
         </tr>
         <tr>
-            <th>19:00</th>
+            <th class="time">19:00</th>
             <td></td>
             <td></td>
             <td></td>
@@ -292,7 +301,7 @@
             <td></td>
         </tr>
         <tr>
-            <th>20:00</th>
+            <th class="time">20:00</th>
             <td></td>
             <td></td>
             <td></td>
@@ -312,7 +321,7 @@
             <td></td>
         </tr>
         <tr>
-            <th>21:00</th>
+            <th class="time">21:00</th>
             <td></td>
             <td></td>
             <td></td>
