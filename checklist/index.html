@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <script src="script.js"></script>
+   
+    <head>
+        <title>
+            Clash Course
+        </title>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" type="text/css" href="style.css" />
+    </head>
+
+    <body>
+        <div class = "container">
+            <div class = "courseList">
+                <h2><b>Course List</b></h2>
+                <div class="row">
+                    <input type="text" id="input-box" placeholder="Add your Course">
+                    <button id= "continue-button" class="button-48" role="button"><span class="text">Continue</span></button>
+                </div>
+                <div class = "course-details" id = "course-details" style="display: none;">
+                    <div class="inputs-checkboxes-wrapper">
+                        <input type ="time" id = "start-time" value = "10:00">
+                        <input type = "time" id = "end-time" value = "22:00">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="monBox" value="monday">
+                            <label class="form-check-label" for="monBox">M</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="tueBox" value="tuesday">
+                            <label class="form-check-label" for="tueBox">T</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="wedBox" value="wednesday">
+                            <label class="form-check-label" for="wedBox">W</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="thuBox" value="thursday">
+                            <label class="form-check-label" for="thuBox">Th</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="friBox" value="friday">
+                            <label class="form-check-label" for="friBox">F</label>
+                        </div>
+                    </div>
+                      <button id= "choose-button" onclick="addCourse()" class="button-48-choose" role="button"><span class="text">Accept</span></button>
+                </div>
+                <ul id = "list-container">
+                    <!--<li class="checked">TEST</li>-->
+                </ul>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
