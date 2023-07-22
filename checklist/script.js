@@ -54,12 +54,19 @@ document.getElementById("choose-button").addEventListener("click", function() {
 
         //Obtaining the checklist element and the course-name  
         var listContainer = document.getElementById("list-container");
-        var courseNameElement = document.querySelector(".course-name");     //I don't remember what this is actually doing
+        var courseNameElement = document.querySelector(".course-name");
+
+        var course = {
+            name: courseNameElement.innerText,
+            start: startTime,
+            end: endTime,
+            days: checkedDays,
+        }
 
         //Adds the course to a checklist along with a 'remove cross'
         if (courseNameElement) {
             let li = document.createElement("li");
-            li.innerHTML = courseNameElement.innerText;
+            li.innerHTML = course.name;
             listContainer.appendChild(li);
             let span = document.createElement("span");
             span.innerHTML = "\u00d7";
@@ -80,12 +87,7 @@ document.getElementById("choose-button").addEventListener("click", function() {
 
 
         //Creates an object representing the course with all the info provided
-        var course = {
-            name: courseNameElement.innerText,
-            start: startTime,
-            end: endTime,
-            days: checkedDays,
-        }
+
     }
 });
 
