@@ -250,7 +250,7 @@ input {
 ul li {
   list-style: none;
   font-size: 17px;
-  padding: 12px 8px 12px 50px;
+  padding: 14px 8px 12px 50px;
   user-select: none;
   cursor: pointer;
   position: relative;
@@ -290,7 +290,7 @@ ul li span {
 }
 
 ul li span:hover {
-  background: rgba(128, 128, 128, 0.37);
+  background: rgba(235, 231, 231, 0.37);
   border-radius: 50%;
 }
 
@@ -345,19 +345,19 @@ ul li span:hover {
 .start-time {
   margin-left: 43px;
   margin-top: 10px;
-  animation: fadeIn 1s;
+  animation: fadeIn 2s;
 }
 
 .end-time {
   margin-left: 65px;
   margin-top: 10px;
-  animation: fadeIn 2s;
+  animation: fadeIn 3.5s;
 }
 
 .week-days {
   margin-left: 120px;
   margin-top: 10px;
-  animation: fadeIn 3s;
+  animation: fadeIn 4.5s;
 }
 
 @keyframes fadeIn {
