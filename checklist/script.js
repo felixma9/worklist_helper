@@ -1,4 +1,6 @@
 
+var listContainer = document.getElementById("list-container");
+
 //Responsible for page function after user presses "continue"
 document.getElementById("continue-button").addEventListener("click", function() {
     
@@ -56,6 +58,7 @@ document.getElementById("choose-button").addEventListener("click", function() {
         var listContainer = document.getElementById("list-container");
         var courseNameElement = document.querySelector(".course-name");
 
+        //Creates an object representing the course with all the info provided
         var course = {
             name: courseNameElement.innerText,
             start: startTime,
@@ -66,7 +69,23 @@ document.getElementById("choose-button").addEventListener("click", function() {
         //Adds the course to a checklist along with a 'remove cross'
         if (courseNameElement) {
             let li = document.createElement("li");
-            li.innerHTML = course.name;
+            let courseDiv = document.createElement('div');
+            let timeDiv = document.createElement('div');
+            let dayDiv = document.createElement('div');
+
+            courseDiv.className = 'course';
+            timeDiv.className = 'time';
+            dayDiv.className = 'day';
+
+            courseDiv.textContent = course.name;
+            timeDiv.textContent = course.start + " - " + course.end;
+            dayDiv.textContent = course.days;
+
+            li.appendChild(courseDiv);
+            li.appendChild(timeDiv);
+            li.appendChild(dayDiv);
+
+
             listContainer.appendChild(li);
             let span = document.createElement("span");
             span.innerHTML = "\u00d7";
@@ -77,6 +96,7 @@ document.getElementById("choose-button").addEventListener("click", function() {
 
         //Hides the course-details box
         document.getElementById("course-details").style.display = "none";
+        saveData();
 
         //Responsible for animation of initial "row" text field re-appearing
         var rowElement = document.getElementsByClassName("row")[0];
@@ -84,9 +104,6 @@ document.getElementById("choose-button").addEventListener("click", function() {
         setTimeout(function() {
             rowElement.style.maxHeight = "100px";
         }, 0);
-
-
-        //Creates an object representing the course with all the info provided
 
     }
 });
@@ -96,11 +113,23 @@ document.getElementById("choose-button").addEventListener("click", function() {
 document.getElementById('list-container').addEventListener("click", function(e){
     if (e.target.tagName === "LI") {
         e.target.classList.toggle("checked");
+        saveData();
     } else if (e.target.tagName === "SPAN") {
         e.target.parentElement.remove();
+        saveData();
     }
     
 }, false);
 
 //Initially hides the course details page
 document.getElementById("course-details").style.display = "none";
+
+
+function saveData() {
+    localStorage.setItem("data", listContainer.innerHTML);
+}
+
+function showData() {
+    listContainer.innerHTML = localStorage.getItem("data");
+}
+showData();

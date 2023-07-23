@@ -16,12 +16,14 @@
 
 
 .courseList {
+  position: relative;
   width: 100%;
   max-width: 700px;
   background: #E8C0EA;
   margin: 100px auto 20px;
   padding: 40px 30px 70px;
   border-radius: 50px;
+  z-index: 1;
 }
 
 
@@ -36,6 +38,7 @@
   padding: 40px 10px 40px;
   border-radius: 50px;
   transition: max-height 0.3s ease-out;
+  overflow: hidden;
 
 }
 
@@ -61,6 +64,8 @@
 
 
 .courseList h2 {
+  position: relative;
+  z-index: 2;
   color: black;
   display: flex;
   align-items: center;
@@ -78,6 +83,8 @@
   margin-bottom: 25px;
   transition: max-height 0.5s ease-out;
   overflow: hidden;
+  position: relative;
+  z-index: 2;
 }
 
 input {
@@ -243,7 +250,7 @@ input {
 
 .form-check-label {
   margin-right: 25px;
-  color: grey;
+  color: rgb(0, 0, 0);
   
 }
 
@@ -254,6 +261,19 @@ ul li {
   user-select: none;
   cursor: pointer;
   position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: rgb(109, 104, 104);
+}
+
+
+.course {
+  flex: 1 1 30%;
+}
+
+.time, .day {
+  flex: 1 1 25%;
 }
 
 ul li::before {
@@ -364,5 +384,3 @@ ul li span:hover {
   0% { opacity: 0; }
   100% { opacity: 1; }
 }
-
-
