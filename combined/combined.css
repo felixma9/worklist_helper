@@ -21,7 +21,7 @@
 
 
 .timetable-box {
-  padding: 20px;
+  padding: 45px;
   padding-right: 75px;
   background-color: rgb(232,192,234);
   border-radius: 35px;
@@ -31,7 +31,7 @@
 
 .timetable {
   padding-top: 90px;
-  padding-bottom: 110px;
+  padding-bottom: 90px;
   padding-left: 50px;
   padding-right: 10px;
   display: flex;
