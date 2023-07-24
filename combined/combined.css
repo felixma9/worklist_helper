@@ -9,11 +9,37 @@
 
 .container {
   display: flex;
-  width: 100%;
   min-height: 100vh;
   background: black;
   padding-top: 10px;
-  padding-left: 30px;
+  padding-left: 10px;
+  padding-bottom: 110px;
+
+  width: 30%;
+  float: right;
+}
+
+
+.timetable-box {
+  padding: 20px;
+  padding-right: 75px;
+  background-color: rgb(232,192,234);
+  border-radius: 35px;
+  width: 2000px;
+}
+
+
+.timetable {
+  padding-top: 90px;
+  padding-bottom: 110px;
+  padding-left: 50px;
+  padding-right: 10px;
+  display: flex;
+  width: 70%;
+  float: center;
+  min-height: 100vh;
+  background-color: black;
+
 }
 
 
@@ -385,4 +411,53 @@ ul li span:hover {
 @keyframes fadeIn {
   0% { opacity: 0; }
   100% { opacity: 1; }
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  background-color: rgb(232,192,234);
+}
+
+td {
+  text-align: left;
+  padding: 4px;
+  border-right: 1px solid #ddd;
+  width: 75px;
+}
+
+th {
+  text-align: left;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 8px;
+  border-right: 1px solid #ddd;
+}.time {
+  width: 30px;
+}
+
+
+/*
+td:nth-child(even), th:nth-child(even) {
+  background-color: rgba(86, 32, 187, 0.589);
+}
+*/
+/*
+tr {
+  border-top: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+}
+*/
+
+.half-hour-row {
+  padding: 8px;
+  /*
+  border-bottom: 1px solid #ddd;
+  border-top: 1px dotted #ddd;
+  */
+}
+
+td:hover {
+  cursor: pointer;
+  background-color: #D6EEEE;
 }
