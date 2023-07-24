@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Timetable</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            background-color: rgb(232,192,234);
+        }
+
+        td {
+            text-align: left;
+            padding: 4px;
+            border-right: 1px solid #ddd;
+            width: 75px;
+        }
+
+        th {
+            text-align: left;
+            padding-top: 2px;
+            padding-bottom: 2px;
+            padding-left: 2px;
+            border-right: 1px solid #ddd;
+        }.time {
+            width: 30px;
+        }
+
+
+        td:nth-child(even), th:nth-child(even) {
+            background-color: rgba(86, 32, 187, 0.589);
+        }
+
+        tr {
+            border-top: 1px solid #ddd;
+            border-right: 1px solid #ddd;
+        }.half-hour-row {
+            padding: 8px;
+            border-bottom: 1px solid #ddd;
+            border-top: 1px dotted #ddd;
+        }
+
+        td:hover {
+            cursor: pointer;
+            background-color: #D6EEEE;
+        }
+
+        .timetable {
+            padding: 20px;
+            background-color: black;
+        }
+
+        .timetable-box {
+            padding: 20px;
+            background-color: rgb(232,192,234);
+            border-radius: 15px;
+        }
+
+    </style>
+  </head>
+
+  <body>
+
+    <div class = "timetable">
+
+        <div class = "timetable-box">
+
+            <h1>Time Table</h1>
+
+            <table>
+                <tr>
+                    <th>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </th>
+                    <th>Monday</th>
+                    <th>Tuesday</th>
+                    <th>Wednesday</th>
+                    <th>Thursday</th>
+                    <th>Friday</th>
+                </tr>
+                <tr>
+                    <th class="time">8:00</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="half-hour-row">
+                    <th>&nbsp;</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th class="time">9:00</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="half-hour-row">
+                    <th>&nbsp;</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th class="time">10:00</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="half-hour-row">
+                    <th>&nbsp;</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th class="time">11:00</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="half-hour-row">
+                    <th>&nbsp;</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th class="time">12:00</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="half-hour-row">
+                    <th>&nbsp;</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th class="time">13:00</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="half-hour-row">
+                    <th>&nbsp;</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th class="time">14:00</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="half-hour-row">
+                    <th>&nbsp;</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th class="time">15:00</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="half-hour-row">
+                    <th>&nbsp;</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th class="time">16:00</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="half-hour-row">
+                    <th>&nbsp;</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th class="time">17:00</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="half-hour-row">
+                    <th>&nbsp;</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th class="time">18:00</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="half-hour-row">
+                    <th>&nbsp;</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th class="time">19:00</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="half-hour-row">
+                    <th>&nbsp;</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th class="time">20:00</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="half-hour-row">
+                    <th>&nbsp;</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th class="time">21:00</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="half-hour-row">
+                    <th>&nbsp;</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+  </body>
+</html>
