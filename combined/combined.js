@@ -71,7 +71,7 @@ document.getElementById("choose-button").addEventListener("click", function() {
             let li = document.createElement("li");
             let courseDiv = document.createElement('div');
             let timeDiv = document.createElement('div');
-            let dayDiv = document.createElement('div');
+            let dayDiv = document.createElement('div');     
 
             courseDiv.className = 'course';
             timeDiv.className = 'time';
