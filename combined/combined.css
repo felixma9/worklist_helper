@@ -423,24 +423,25 @@ table {
 
 td {
   text-align: left;
-  padding: 4px;
+  padding: 1%;
   border-right: 1px solid #ddd;
-  width: 75px;
+  width: 18%;
 }
 
 th {
   text-align: left;
-  padding-top: 2px;
-  padding-bottom: 2px;
-  padding-left: 8px;
+  padding-top: 0.2%;
+  padding-bottom: 0.2%;
+  padding-left: 1%;
   border-right: 1px solid #ddd;
+  font-size: 14px;
 }.time {
-  width: 30px;
+  width: 8%;
 }
 
 
 .half-hour-row {
-  padding: 8px;
+  padding: 0.1%;
 }
 
 td:hover {
