@@ -30,49 +30,7 @@
                         <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="shape-fill"></path>
                     </svg>
                 </div>
-                <div class = "courseList">
-                    <h2>Course List</h2>
-                    <div class="row">
-                        <input type="text" required id="input-box"  maxlength="15" placeholder="Add your Course">
-                        <button id= "continue-button" class="button-48" role="button"><span class="text">Continue</span></button>
-                    </div>
-                    <div class = "course-details" id = "course-details" style="display: none;">
-                        <div class="inputs-checkboxes-wrapper">
-                            <input type ="time" id = "start-time" value = "">
-                            <input type = "time" id = "end-time" value = "">
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="monBox" value="M">
-                                <label class="form-check-label" for="monBox">M</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="tueBox" value="T">
-                                <label class="form-check-label" for="tueBox">T</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="wedBox" value="W">
-                                <label class="form-check-label" for="wedBox">W</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="thuBox" value="Th">
-                                <label class="form-check-label" for="thuBox">Th</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="friBox" value="F">
-                                <label class="form-check-label" for="friBox">F</label>
-                            </div>
-                        </div>
-                        <div class="info-row">
-                            <div class="start-time">Start Time</div>
-                            <div class="end-time">End Time</div>
-                            <div class="week-days">Days of the Week</div>
-                        </div>
-                        <button id= "choose-button" onclick="addCourse()" class="button-48-choose" role="button"><span class="text">Accept</span></button>
-                    </div>
-                    <ul id = "list-container">
-                        <!--<li class="checked">TEST</li>-->
-                    </ul>
-                </div>
-                <script src="combined.js"></script>
+
                 <div class = "timetable">
 
                     <div class = "timetable-box">
@@ -312,5 +270,50 @@
                         </table>
                     </div>
                 </div>
+
+                <div class = "courseList">
+                    <h2>Course List</h2>
+                    <div class="row">
+                        <input type="text" required id="input-box"  maxlength="15" placeholder="Add your Course">
+                        <button id= "continue-button" class="button-48" role="button"><span class="text">Continue</span></button>
+                    </div>
+                    <div class = "course-details" id = "course-details" style="display: none;">
+                        <div class="inputs-checkboxes-wrapper">
+                            <input type ="time" id = "start-time" value = "">
+                            <input type = "time" id = "end-time" value = "">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="monBox" value="M">
+                                <label class="form-check-label" for="monBox">M</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="tueBox" value="T">
+                                <label class="form-check-label" for="tueBox">T</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="wedBox" value="W">
+                                <label class="form-check-label" for="wedBox">W</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="thuBox" value="Th">
+                                <label class="form-check-label" for="thuBox">Th</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="friBox" value="F">
+                                <label class="form-check-label" for="friBox">F</label>
+                            </div>
+                        </div>
+                        <div class="info-row">
+                            <div class="start-time">Start Time</div>
+                            <div class="end-time">End Time</div>
+                            <div class="week-days">Days of the Week</div>
+                        </div>
+                        <button id= "choose-button" onclick="addCourse()" class="button-48-choose" role="button"><span class="text">Accept</span></button>
+                    </div>
+                    <ul id = "list-container">
+                        <!--<li class="checked">TEST</li>-->
+                    </ul>
+                </div>
+                <script src="combined.js"></script>
+
     </body>
 </html>
