@@ -28,13 +28,12 @@
   min-width: 100%;
   max-height: 100%;
   overflow: hidden;
-
 }
 
 .timetable {
-  padding: 10% 1%;
+  padding: 6% 1%;
   display: flex;
-  width: 70%;
+  width: 60%;
   float: center;
   min-height: 100vh;
   background-color: rgb(0, 0, 0);
@@ -46,12 +45,12 @@
 
 .courseList {
   position: relative;
-  width: 100%;
+  width: 35%;
   max-width: 100%;
   background: #E8C0EA;
   margin: 10% auto 2%;
   padding: 5% 5% 5%;
-  border-radius: 5rem;
+  border-radius: 2rem;
   z-index: 1;
   position: relative;
   overflow: hidden;
