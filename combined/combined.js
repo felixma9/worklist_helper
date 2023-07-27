@@ -1,3 +1,5 @@
+var courses = [];
+var courseId = 0;
 
 var listContainer = document.getElementById("list-container");
 
@@ -8,7 +10,7 @@ document.getElementById("continue-button").addEventListener("click", function() 
     if (!document.getElementById("input-box").value) {
         alert("Please enter a course!")
     } else {
-
+            
         //Reveals the course-details page element
         document.getElementById("course-details").style.display = "block"
 
@@ -60,11 +62,15 @@ document.getElementById("choose-button").addEventListener("click", function() {
 
         //Creates an object representing the course with all the info provided
         var course = {
+            id: courseId++,
             name: courseNameElement.innerText,
             start: startTime,
             end: endTime,
             days: checkedDays,
         }
+
+        //Add course to array
+        courses.push(course);
 
         //Adds the course to a checklist along with a 'remove cross'
         if (courseNameElement) {
@@ -84,7 +90,9 @@ document.getElementById("choose-button").addEventListener("click", function() {
             li.appendChild(courseDiv);
             li.appendChild(timeDiv);
             li.appendChild(dayDiv);
-
+            
+            //Links to checklist item ID to the courseId for the 'courses' array
+            li.dataset.courseId = course.id;
 
             listContainer.appendChild(li);
             let span = document.createElement("span");
@@ -109,11 +117,21 @@ document.getElementById("choose-button").addEventListener("click", function() {
 });
 
 
+
+//Finds the course using the ID from the 'courses' array and returns it
+function findCourseById(id) {
+    return courses.find(course => course.id === id);
+}
+
 //Responsible for page function after user clicks checklist item or "remove" on checklist item
 document.getElementById('list-container').addEventListener("click", function(e){
     if (e.target.tagName === "LI") {
         e.target.classList.toggle("checked");
+
+        //Retrieving the course (using the ID) from the 'courses' array
+        var course = findCourseById(e.target.dataset.courseId);
         saveData();
+        
     } else if (e.target.tagName === "SPAN") {
         e.target.parentElement.remove();
         saveData();
