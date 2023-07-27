@@ -278,9 +278,16 @@
                         <button id= "continue-button" class="button-48" role="button"><span class="text">Continue</span></button>
                     </div>
                     <div class = "course-details" id = "course-details" style="display: none;">
-                        <div class="inputs-checkboxes-wrapper">
+                        <div class="time-input-wrapper">
                             <input type ="time" id = "start-time" value = "">
                             <input type = "time" id = "end-time" value = "">
+                        </div>
+                        <div class = "time-prompt-wrapper">
+                            <div class="start-time">Start Time</div>
+                            <div class="end-time">End Time</div>
+                        </div>
+
+                        <div class = "checkbox-wrapper">
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="checkbox" id="monBox" value="M">
                                 <label class="form-check-label" for="monBox">M</label>
@@ -302,12 +309,13 @@
                                 <label class="form-check-label" for="friBox">F</label>
                             </div>
                         </div>
+
                         <div class="info-row">
-                            <div class="start-time">Start Time</div>
-                            <div class="end-time">End Time</div>
                             <div class="week-days">Days of the Week</div>
                         </div>
-                        <button id= "choose-button" onclick="addCourse()" class="button-48-choose" role="button"><span class="text">Accept</span></button>
+                        <div class="'choose-wrapper">
+                            <button id= "choose-button" onclick="addCourse()" class="button-48-choose" role="button"><span class="text">Accept</span></button>
+                        </div>
                     </div>
                     <ul id = "list-container">
                         <!--<li class="checked">TEST</li>-->
