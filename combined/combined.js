@@ -131,8 +131,6 @@ document.getElementById('list-container').addEventListener("click", function(e){
         //Retrieving the course (using the ID) from the 'courses' array
         var course = findCourseById(e.target.dataset.courseId);
         saveData();
-
-        console.log(course.name);
         
     } else if (e.target.tagName === "SPAN") {
         e.target.parentElement.remove();
