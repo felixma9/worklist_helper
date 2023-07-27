@@ -94,6 +94,8 @@ document.getElementById("choose-button").addEventListener("click", function() {
         }
 
 
+
+
         //Hides the course-details box
         document.getElementById("course-details").style.display = "none";
         saveData();
