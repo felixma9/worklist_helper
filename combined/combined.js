@@ -68,6 +68,7 @@ document.getElementById("choose-button").addEventListener("click", function() {
             end: endTime,
             days: checkedDays,
         }
+        
 
         //Add course to array
         courses.push(course);
@@ -121,6 +122,7 @@ document.getElementById("choose-button").addEventListener("click", function() {
 //Finds the course using the ID from the 'courses' array and returns it
 function findCourseById(id) {
     return courses.find(course => course.id === id);
+    
 }
 
 //Responsible for page function after user clicks checklist item or "remove" on checklist item
@@ -129,7 +131,13 @@ document.getElementById('list-container').addEventListener("click", function(e){
         e.target.classList.toggle("checked");
 
         //Retrieving the course (using the ID) from the 'courses' array
-        var course = findCourseById(e.target.dataset.courseId);
+        var course = findCourseById(parseInt(e.target.dataset.courseId));
+        if (course) {
+            console.log(course.name);
+        } else {
+            console.log("Course not found");
+        }
+        
         saveData();
         
     } else if (e.target.tagName === "SPAN") {
