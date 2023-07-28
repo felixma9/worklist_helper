@@ -189,6 +189,7 @@ document.getElementById('list-container').addEventListener("click", function(e){
             } else {
                 course.checked = false;
                 hideCourse(course);
+                hideAll();
                 showAllChecked();
             }
 
@@ -205,6 +206,7 @@ document.getElementById('list-container').addEventListener("click", function(e){
         //Hide course on timetable and remove it
         course.checked = false;
         hideCourse(course);
+        hideAll();
         showAllChecked();
 
         e.target.parentElement.remove();
@@ -230,7 +232,13 @@ showData();
 //Colours in all the slots that this course corresponds to
 function showCourse(course) {
     for (slot of course.slots) {
-        document.getElementById(slot).className = "filled";
+        if (document.getElementById(slot).classList.contains("filled") || document.getElementById(slot).classList.contains("conflict")) {
+            document.getElementById(slot).className = "conflict";
+        } else {
+            document.getElementById(slot).className = "filled";
+        }
+        
+        //document.getElementById(slot).className = "filled";
     }
 }
 
@@ -238,6 +246,7 @@ function showCourse(course) {
 function hideCourse(course) {
     for (slot of course.slots) {
         document.getElementById(slot).classList.remove("filled");
+        document.getElementById(slot).classList.remove("conflict");
     }
 }
 
@@ -246,5 +255,11 @@ function showAllChecked() {
         if (course.checked == true) {
             showCourse(course);
         }
+    }
+}
+
+function hideAll() {
+    for (course of courses) {
+        hideCourse(course);
     }
 }

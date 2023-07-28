@@ -441,6 +441,10 @@ td {
   background-color: white;
 }
 
+.conflict {
+  background-color: red;
+}
+
 th {
   text-align: center;
   padding-top: 0.2%;
