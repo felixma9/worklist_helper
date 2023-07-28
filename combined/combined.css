@@ -428,6 +428,10 @@ td {
   width: 75px;
 }
 
+.filled {
+  background-color: white;
+}
+
 th {
   text-align: left;
   padding-top: 2px;

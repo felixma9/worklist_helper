@@ -113,9 +113,79 @@ document.getElementById("choose-button").addEventListener("click", function() {
 document.getElementById('list-container').addEventListener("click", function(e){
     if (e.target.tagName === "LI") {
         e.target.classList.toggle("checked");
+<<<<<<< Updated upstream
+=======
+
+        //Retrieving the course (using the ID) from the 'courses' array
+        var course = findCourseById(parseInt(e.target.dataset.courseId));
+        if (course) {
+
+            //Store the start and end times, as well as start/end hours as integers
+            var filteredStart = course.start.replace(':', '');
+            var filteredEnd = course.end.replace(':', '');
+
+            var intStart = parseInt(filteredStart);
+            var intEnd = parseInt(filteredEnd);
+
+            var intStartHour = parseInt(course.start);
+            var intEndHour = parseInt(course.end);
+
+            //Does the course begin and end after the half-hour?
+            let startAfterHalf = (intStart % 100) >= 30;
+            let endAfterhalf = (intEnd % 100) >= 30;
+
+            //Calculate the length of the course
+            var courseLength;
+            
+            if (startAfterHalf == endAfterhalf) {
+                courseLength = intEndHour - intStartHour;
+            } else if (startAfterHalf && !endAfterhalf) {
+                courseLength = intEndHour - intStartHour - 0.5;
+            } else {
+                courseLength = intEndHour - intStartHour + 0.5;
+            }
+
+            var startHourTag = (intStartHour - 8) * 2 
+
+            if (startAfterHalf) startHourTag++;
+
+            //Get the slots to be filled in
+            var slotIds = [];
+            for (date of course.days) {
+                for (let i = 0; i < courseLength; i++) {
+                    var stringTag = startHourTag + i;
+                    slotIds.push(date + stringTag);
+                    console.log(slotIds);
+                }
+            }
+
+            //Fill in the appropriate slots
+            for (id of slotIds) {
+                document.getElementById(id).className = "filled";
+            }
+
+            // console.log(intStart);
+            // console.log(intEnd);
+            // console.log(intStartHour);
+            // console.log(intEndHour);
+            // console.log(startAfterHalf);
+            // console.log(endAfterhalf);
+            // console.log(courseLength);
+            // console.log(course.days);
+            // console.log(startHourTag);
+
+
+        } else {
+            console.log("Course not found");
+        }
+        
+>>>>>>> Stashed changes
         saveData();
     } else if (e.target.tagName === "SPAN") {
         e.target.parentElement.remove();
+
+        //Remove this course from the array of active courses
+
         saveData();
     }
     
