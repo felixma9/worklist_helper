@@ -431,6 +431,7 @@ table {
 }
 
 td {
+  transition: background 0.3s ease;
   text-align: left;
   padding: 1%;
   border-right: 1px solid #ddd;
@@ -438,10 +439,12 @@ td {
 }
 
 .filled {
+  transition: all 0.3s ease;
   background-color: white;
 }
 
 .conflict {
+  transition: all 0.3s ease;
   background-color: red;
 }
 
