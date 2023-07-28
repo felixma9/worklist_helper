@@ -200,6 +200,7 @@ document.getElementById('list-container').addEventListener("click", function(e){
         
     } else if (e.target.tagName === "SPAN") {
 
+        
         //Retrieving the course (using the ID) from the 'courses' array
         var course = findCourseById(parseInt(e.target.parentElement.dataset.courseId));
 
@@ -208,6 +209,7 @@ document.getElementById('list-container').addEventListener("click", function(e){
         hideCourse(course);
         hideAll();
         showAllChecked();
+        
 
         e.target.parentElement.remove();
 
