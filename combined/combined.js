@@ -60,6 +60,48 @@ document.getElementById("choose-button").addEventListener("click", function() {
         var listContainer = document.getElementById("list-container");
         var courseNameElement = document.querySelector(".course-name");
 
+        //Each course object has an array with all of the slots it takes up
+        var filteredStart = startTime.replace(':', '');
+        var filteredEnd = endTime.replace(':', '');
+
+        var intStart = parseInt(filteredStart);
+        var intEnd = parseInt(filteredEnd);
+
+        var intStartHour = parseInt(startTime);
+        var intEndHour = parseInt(endTime);
+        
+        //Does the course begin/end after the half hour?
+        let startAfterHalf = (intStart % 100) >= 30;
+        let endAfterhalf = (intEnd % 100) >= 30;
+
+        //Calculate the length of the course
+        var courseLength;
+        
+        if (startAfterHalf == endAfterhalf) {
+            courseLength = intEndHour - intStartHour;
+        } else if (startAfterHalf && !endAfterhalf) {
+            courseLength = intEndHour - intStartHour - 0.5;
+        } else {
+            courseLength = intEndHour - intStartHour + 0.5;
+        }
+
+        //Get the first slot the course fills in
+        var startHourTag = (intStartHour - 8) * 2 
+        if (startAfterHalf) startHourTag++;
+
+        //Get the exact slots to be filled in
+        var slotIds = [];
+        for (date of checkedDays) {
+            for (let i = 0; i < courseLength * 2; i++) {
+                var stringTag = startHourTag + i;
+
+                if (stringTag > 27 || stringTag < 0) break;
+
+                slotIds.push(date + stringTag);
+                console.log(slotIds);
+            }
+        }
+
         //Creates an object representing the course with all the info provided
         var course = {
             id: courseId++,
@@ -67,8 +109,11 @@ document.getElementById("choose-button").addEventListener("click", function() {
             start: startTime,
             end: endTime,
             days: checkedDays,
+            slots: slotIds,
+            checked: false
         }
         
+        //console.log(course.slotIds);
 
         //Add course to array
         courses.push(course);
@@ -127,21 +172,43 @@ function findCourseById(id) {
 
 //Responsible for page function after user clicks checklist item or "remove" on checklist item
 document.getElementById('list-container').addEventListener("click", function(e){
+
     if (e.target.tagName === "LI") {
         e.target.classList.toggle("checked");
 
         //Retrieving the course (using the ID) from the 'courses' array
         var course = findCourseById(parseInt(e.target.dataset.courseId));
+
         if (course) {
-            console.log(course.name);
+
+            //Display course if checked, hide if unchecked
+            if (e.target.classList.contains("checked")) {
+                course.checked = true;
+                console.log(course.name);
+                showCourse(course);
+            } else {
+                course.checked = false;
+                hideCourse(course);
+                showAllChecked();
+            }
+
         } else {
             console.log("Course not found");
         }
-        
         saveData();
         
     } else if (e.target.tagName === "SPAN") {
+
+        //Retrieving the course (using the ID) from the 'courses' array
+        var course = findCourseById(parseInt(e.target.parentElement.dataset.courseId));
+
+        //Hide course on timetable and remove it
+        course.checked = false;
+        hideCourse(course);
+        showAllChecked();
+
         e.target.parentElement.remove();
+
         saveData();
     }
     
@@ -159,3 +226,25 @@ function showData() {
     listContainer.innerHTML = localStorage.getItem("data");
 }
 showData();
+
+//Colours in all the slots that this course corresponds to
+function showCourse(course) {
+    for (slot of course.slots) {
+        document.getElementById(slot).className = "filled";
+    }
+}
+
+//Removes the given course from the timetable
+function hideCourse(course) {
+    for (slot of course.slots) {
+        document.getElementById(slot).classList.remove("filled");
+    }
+}
+
+function showAllChecked() {
+    for (course of courses) {
+        if (course.checked == true) {
+            showCourse(course);
+        }
+    }
+}

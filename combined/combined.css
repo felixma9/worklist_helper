@@ -437,6 +437,10 @@ td {
   width: 18%;
 }
 
+.filled {
+  background-color: white;
+}
+
 th {
   text-align: center;
   padding-top: 0.2%;
