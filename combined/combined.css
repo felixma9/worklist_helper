@@ -37,7 +37,6 @@
   width: 60%;
   float: center;
   min-height: 100vh;
-  background-color: rgb(0, 0, 0);
   position: relative;
   max-height: 100%;
   overflow: hidden;
@@ -61,7 +60,7 @@
 }
 
 .course-details {
-  max-height: 40vh;
+  max-height: 30vh;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -72,17 +71,17 @@
   padding-right: 0%;
   transition: max-height 0.3s ease-out;
   overflow-wrap: break-word;
-  overflow: hidden;
+  overflow: auto;
   justify-content: space-evenly;
   z-index: 2;
 }
 
 .course-name {
-  width: 100%;
+
   max-width: 100%;
   background: transparent;
   margin: 0.1% 0.8% 1%;
-  padding: 5% 2% 5%;
+  padding: 2% 1% 1%;
   border-radius: 5rem;
 }
 
@@ -90,7 +89,7 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
-  padding: 1% 1% 4%;
+  padding: 1% 1% 1%;
   align-items: center;
 }
 
@@ -115,7 +114,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #fffdff95;
+  background: #fffdff5e;
   border-radius: 3rem;
   padding-left: 2%;
   margin-bottom: 2.5%;
@@ -153,14 +152,15 @@ input {
 
 
 #choose-button {
-  align-self: flex-end; /* or center */
+  align-self: flex-end;
   margin-top: 1%;
+  margin-right: 5%;
 }
 
 
 .button-48 {
   appearance: none;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   border-width: 0;
   border: 1px solid black;
   box-sizing: border-box;
@@ -234,7 +234,7 @@ input {
   box-sizing: border-box;
   color: #000000;
   cursor: pointer;
-  display: inline-block;
+  display: flex;
   font-family: Clarkson,Helvetica,sans-serif;
   font-size: 12px;
   font-weight: 500;
@@ -365,51 +365,29 @@ ul li span:hover {
   border-radius: 50%;
 }
 
-.wave {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  overflow: hidden;
-  line-height: 0;
-  z-index: 2;
-}
+.custom-shape-divider-bottom-1690504441 {
 
-.wave svg {
-  position: relative;
-  display: block;
-  width: calc(121% + 1.3px);
-  height: 102px;
-}
-
-.wave .shape-fill {
-  fill: #E8C0EA;
-}
-
-.wave2 {
+  z-index: 1;
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
   overflow: hidden;
   line-height: 0;
-  z-index: 2;
-  max-height: 8%;
+  transform: rotate(180deg);
 }
 
-.wave2 svg {
+.custom-shape-divider-bottom-1690504441 svg {
   position: relative;
   display: block;
-  width: calc(102% + 1.3px);
-  height: 73px;
+  width: calc(130% + 1.3px);
+  height: 60px;
   transform: rotateY(180deg);
-
 }
 
-.wave2 .shape-fill {
+.custom-shape-divider-bottom-1690504441 .shape-fill {
   fill: #E8C0EA;
 }
-
 .info-row {
   display: flex;
   justify-content:baseline;
@@ -484,7 +462,7 @@ td:hover {
 }
 
 .shape-blob {
-  z-index: 1;
+  z-index: 0;
 	background:#C2EAC0;
 	height: 200px;
 	width: 200px;
@@ -492,7 +470,7 @@ td:hover {
   	animation: 
 		transform 20s ease-in-out infinite both alternate,
 		movement_one 40s ease-in-out infinite both;
-	opacity:.7;
+	opacity:.6;
 	position: absolute;
 	left: 70%;
 	top: 80%;
@@ -540,24 +518,14 @@ td:hover {
    50% { transform: translate(50%, 20%) rotate(-200deg) scale(1.2);}
 }
 
-h1 {
-	font-family: 'Playfair Display', serif;
-	font-size: 5em;
-	letter-spacing: 2px;
-	font-weight: 900;
-	color: white;
-	line-height: .9em;
-	position: relative;
-	z-index: 4;
-	text-shadow: 2px 3px 15px rgba(0,0,0,.15);
-}
-
 
 .label-name {
-  color: white;
+  padding-left: 2%;
+  color: #E8C0EA;
+  padding-right: 2%;
   position: absolute;
   top: 0;
   left: 0;
   z-index: 5;
-  font-size: 50px;
+  font-size: 90px;
 } /* Green */
