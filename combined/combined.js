@@ -113,7 +113,7 @@ document.getElementById("choose-button").addEventListener("click", function() {
             checked: false
         }
         
-        //console.log(course.slotIds);
+        console.log(course.slotIds);
 
         //Add course to array
         courses.push(course);
@@ -204,12 +204,13 @@ document.getElementById('list-container').addEventListener("click", function(e){
         //Retrieving the course (using the ID) from the 'courses' array
         var course = findCourseById(parseInt(e.target.parentElement.dataset.courseId));
 
-        //Hide course on timetable and remove it
-        course.checked = false;
-        hideCourse(course);
-        hideAll();
-        showAllChecked();
-        
+        if (course) {
+            //Hide course on timetable and remove it
+            course.checked = false;
+            hideCourse(course);
+            hideAll();
+            showAllChecked();
+        }
 
         e.target.parentElement.remove();
 

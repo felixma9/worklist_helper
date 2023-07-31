@@ -448,6 +448,10 @@ td {
   background-color: red;
 }
 
+.first-block {
+  background-color: black;
+}
+
 th {
   text-align: center;
   padding-top: 0.2%;
