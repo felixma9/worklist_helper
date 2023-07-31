@@ -50,9 +50,17 @@ document.getElementById("choose-button").addEventListener("click", function() {
         //Obtaining the days-of-the-week input from the user (stores it in an array)
         var checkBoxes = document.querySelectorAll(".form-check-input");
         var checkedDays = [];
+        var hiddenCheckedDays = [];
+
         for (var i = 0; i < checkBoxes.length; i++) {
             if (checkBoxes[i].checked) {
-                checkedDays.push(checkBoxes[i].value)
+                if (checkBoxes[i].value === "Th") {
+                    hiddenCheckedDays.push("X");
+                    checkedDays.push(checkBoxes[i].value);
+                } else {
+                    checkedDays.push(checkBoxes[i].value);
+                    hiddenCheckedDays.push(checkBoxes[i].value);
+                }
             }
         }
 
@@ -98,7 +106,7 @@ document.getElementById("choose-button").addEventListener("click", function() {
                 if (stringTag > 27 || stringTag < 0) break;
 
                 slotIds.push(date + stringTag);
-                console.log(slotIds);
+                //console.log(slotIds);
             }
         }
 
@@ -110,10 +118,11 @@ document.getElementById("choose-button").addEventListener("click", function() {
             end: endTime,
             days: checkedDays,
             slots: slotIds,
-            checked: false
+            checked: false,
+            hidDays: hiddenCheckedDays
         }
-        
-        console.log(course.slotIds);
+
+        console.log(course.hidDays);
 
         //Add course to array
         courses.push(course);
