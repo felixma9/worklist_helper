@@ -3,6 +3,11 @@ var courseId = 0;
 
 var listContainer = document.getElementById("list-container");
 
+// Add an event listener to the "input-box" element to convert the input value to uppercase
+document.getElementById("input-box").addEventListener("input", function() {
+    this.value = this.value.toUpperCase();
+});
+
 //Responsible for page function after user presses "continue"
 document.getElementById("continue-button").addEventListener("click", function() {
     
