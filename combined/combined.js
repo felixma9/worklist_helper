@@ -257,14 +257,10 @@ function showCourse(course) {
         console.log(currentDay);
 
         if (slot.charAt(0) != currentDay && (document.getElementById(slot).classList.contains("filled") || document.getElementById(slot).classList.contains("conflict"))) {
-            //document.getElementById(slot).className = "first-block";
             currentDay = slot.charAt(0);
             document.getElementById(slot).className = "conflict";
 
             document.getElementById(slot).innerHTML = course.name;
-
-        // } else if (document.getElementById(slot).classList.contains("first-block")) {
-        //     document.getElementById(slot).className = "first-block-conflict";
         } 
         
         else if (slot.charAt(0) != currentDay) {
@@ -279,8 +275,6 @@ function showCourse(course) {
         } else {
             document.getElementById(slot).className = "filled";
         }
-        
-        //document.getElementById(slot).className = "filled";
     }
 }
 

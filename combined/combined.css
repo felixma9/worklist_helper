@@ -448,14 +448,6 @@ td {
   background-color: red;
 }
 
-.first-block {
-  background-color: white;
-}
-
-.first-block-conflict {
-  background-color: red;
-}
-
 th {
   text-align: center;
   padding-top: 0.2%;
