@@ -52,6 +52,7 @@ document.getElementById("choose-button").addEventListener("click", function() {
         var checkedDays = [];
         var hiddenCheckedDays = [];
 
+        //Replace all 'Th' with 'X' in a new checked days array
         for (var i = 0; i < checkBoxes.length; i++) {
             if (checkBoxes[i].checked) {
                 if (checkBoxes[i].value === "Th") {
@@ -63,6 +64,10 @@ document.getElementById("choose-button").addEventListener("click", function() {
                 }
             }
         }
+
+        console.log(checkedDays);
+        console.log(hiddenCheckedDays);
+        console.log(checkBoxes);
 
         //Obtaining the checklist element and the course-name  
         var listContainer = document.getElementById("list-container");
@@ -99,7 +104,7 @@ document.getElementById("choose-button").addEventListener("click", function() {
 
         //Get the exact slots to be filled in
         var slotIds = [];
-        for (date of checkedDays) {
+        for (date of hiddenCheckedDays) {
             for (let i = 0; i < courseLength * 2; i++) {
                 var stringTag = startHourTag + i;
 
@@ -243,8 +248,33 @@ showData();
 
 //Colours in all the slots that this course corresponds to
 function showCourse(course) {
+
+    //Placeholder day
+    var currentDay = 'P';
+
     for (slot of course.slots) {
-        if (document.getElementById(slot).classList.contains("filled") || document.getElementById(slot).classList.contains("conflict")) {
+
+        console.log(currentDay);
+
+        if (slot.charAt(0) != currentDay && (document.getElementById(slot).classList.contains("filled") || document.getElementById(slot).classList.contains("conflict"))) {
+            //document.getElementById(slot).className = "first-block";
+            currentDay = slot.charAt(0);
+            document.getElementById(slot).className = "conflict";
+
+            document.getElementById(slot).innerHTML = course.name;
+
+        // } else if (document.getElementById(slot).classList.contains("first-block")) {
+        //     document.getElementById(slot).className = "first-block-conflict";
+        } 
+        
+        else if (slot.charAt(0) != currentDay) {
+            currentDay = slot.charAt(0);
+            document.getElementById(slot).className = "filled";
+
+            document.getElementById(slot).innerHTML = course.name;
+        }
+        
+        else if (document.getElementById(slot).classList.contains("filled") || document.getElementById(slot).classList.contains("conflict")) {
             document.getElementById(slot).className = "conflict";
         } else {
             document.getElementById(slot).className = "filled";
@@ -259,6 +289,8 @@ function hideCourse(course) {
     for (slot of course.slots) {
         document.getElementById(slot).classList.remove("filled");
         document.getElementById(slot).classList.remove("conflict");
+        document.getElementById(slot).classList.remove("first-block");
+        document.getElementById(slot).innerHTML = "";
     }
 }
 

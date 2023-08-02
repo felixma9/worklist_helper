@@ -449,7 +449,11 @@ td {
 }
 
 .first-block {
-  background-color: black;
+  background-color: white;
+}
+
+.first-block-conflict {
+  background-color: red;
 }
 
 th {
