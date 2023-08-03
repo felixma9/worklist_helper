@@ -7,6 +7,32 @@
   max-zoom: 150%;
 }
 
+*::-webkit-scrollbar {
+  width: 7px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 5px;
+  border-top: 70px solid transparent;
+  border-bottom: 35px solid transparent;
+  background-clip: padding-box; 
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+*::-webkit-scrollbar-thumb:active {
+  background-color: #333;
+}
+
+*::-webkit-scrollbar-track {
+  background-color: transparent; /* Set a color for the scrollbar track */
+  
+}
+
+
 .parent {
   display: flex;
   min-height: 100vh;
@@ -42,7 +68,6 @@
   position: relative;
   max-height: 100%;
   overflow: hidden;
-
 }
 
 .courseList {
@@ -545,4 +570,6 @@ td:hover {
   left: 0;
   z-index: 5;
   font-size: 64px;
+  font-weight: 400;
 } /* Green */
+
