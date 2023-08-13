@@ -2,14 +2,41 @@
   margin: 0;
   padding: 0;
   font-family:'Outfit', sans-serif;
+  font-weight: 600;
   box-sizing: border-box;
   max-zoom: 150%;
 }
 
+*::-webkit-scrollbar {
+  width: 7px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 5px;
+  border-top: 70px solid transparent;
+  border-bottom: 35px solid transparent;
+  background-clip: padding-box; 
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+*::-webkit-scrollbar-thumb:active {
+  background-color: #333;
+}
+
+*::-webkit-scrollbar-track {
+  background-color: transparent; /* Set a color for the scrollbar track */
+  
+}
+
+
 .parent {
   display: flex;
   min-height: 100vh;
-  background: black;
+  background: #1E1E1E;
   padding: 1%;
   overflow: hidden;
   position: relative;
@@ -29,6 +56,7 @@
   max-height: 100%;
   overflow: auto;
   z-index: 2;
+  border: #ffffff 2px solid;
 }
 
 .timetable {
@@ -40,15 +68,15 @@
   position: relative;
   max-height: 100%;
   overflow: hidden;
-
 }
 
 .courseList {
   position: relative;
   width: 35%;
   max-width: 100%;
-  background: #E8C0EA;
-  margin: 10% auto 2%;
+  background: #e8c0eaaf ;
+  border: #ffffff 2px solid;
+  margin: 6% auto 2%;
   padding: 1% 1% 2%;
   padding-right: 1.5%;
   border-radius: 2rem;
@@ -56,7 +84,7 @@
   position: relative;
   overflow: auto;
   max-height: 100%;
-  height: 50vh;
+  height: 75vh;
 }
 
 .course-details {
@@ -128,6 +156,7 @@
 input {
   flex: 1;
   border: none;
+  font-size: 17px;
   outline: none;
   background: transparent;
   padding: 10px;
@@ -207,7 +236,8 @@ input {
 }
 
 .button-48:hover:before {
-  background-color:  rgba(86, 32, 187, 0.589);
+  /* background-color:  rgba(17, 6, 36, 0.589); */
+  background-color:  #A35E94;
   animation: opacityFallbackIn 0s step-start forwards;
   clip-path: polygon(0 0, 101% 0, 101% 101%, 0 101%);
   border-radius: 30px;
@@ -278,7 +308,7 @@ input {
 }
 
 .button-48-choose:hover:before {
-  background-color: rgba(86, 32, 187, 0.589);
+  background-color:  #A35E94;
   animation: opacityFallbackIn 0s step-start forwards;
   clip-path: polygon(0 0, 101% 0, 101% 101%, 0 101%);
   border-radius: 30px;
@@ -315,7 +345,7 @@ ul li {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: rgb(109, 104, 104);
+  color: rgb(77, 75, 75);
 }
 
 
@@ -432,20 +462,21 @@ table {
 
 td {
   transition: background 0.3s ease;
-  text-align: left;
+  text-align: center;
   padding: 1%;
   border-right: 1px solid #ddd;
   width: 18%;
+  font-size: 13px;
 }
 
 .filled {
   transition: all 0.3s ease;
-  background-color: white;
+  background-color: #ecdee7;
 }
 
 .conflict {
   transition: all 0.3s ease;
-  background-color: red;
+  background-color: #9b1e33;
 }
 
 th {
@@ -540,3 +571,4 @@ td:hover {
   z-index: 5;
   font-size: 90px;
 } /* Green */
+
