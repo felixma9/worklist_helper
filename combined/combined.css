@@ -505,7 +505,7 @@ td:hover {
 
 .shape-blob {
   z-index: 0;
-	background:#5c5458;
+	background:#C2EAC0;
 	height: 200px;
 	width: 200px;
 	border-radius: 30% 50% 20% 40%;
@@ -563,13 +563,12 @@ td:hover {
 
 .label-name {
   padding-left: 2%;
-  color: #ffffff;
+  color: #E8C0EA;
   padding-right: 2%;
   position: absolute;
-  top: 10;
+  top: 0;
   left: 0;
   z-index: 5;
-  font-size: 64px;
-  font-weight: 400;
+  font-size: 90px;
 } /* Green */
 
