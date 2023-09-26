@@ -1,4 +1,4 @@
-# worklist_helper
+# Clash Course
 Helper website for UBC courses
 
 Basic idea:
