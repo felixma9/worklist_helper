@@ -1,6 +1,3 @@
-# Clash Course
-Helper website for UBC courses
+# Clash Course -> clashcourse.online
 
-Basic idea:
-Website shows empty timetable, user adds courses/times, checks them off and it appears on the timetable.
-Then they can see visually whether courses conflict and which courses they can put into one worklist.
+Full-stack web application assisting students in visualizing course schedules and catching potential conflicts. Developed using HTML, CSS, and JavaScript, the app allows students to add courses and times to a schedule, visually highlighting any time conflicts between courses.
