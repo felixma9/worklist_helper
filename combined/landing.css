@@ -52,3 +52,32 @@ a, button {
 .custom-link {
     background-color: #1E1E1E;
 }
+
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.maintenance-banner {
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+
+.maintenance-banner h1 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.maintenance-banner p {
+    color: #666;
+}
